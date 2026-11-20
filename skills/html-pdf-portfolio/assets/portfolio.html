@@ -1,12 +1,11 @@
-<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>커리어 포트폴리오 · 핵심 정보 중심 8페이지 템플릿</title><style>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>커리어 포트폴리오 · 회사·프로젝트별 성과 챕터 18페이지 템플릿</title><style>
 @font-face { font-family:"Pretendard Kit"; src:url("../../../assets/fonts/PretendardVariable.woff2") format("woff2"); font-weight:100 900; font-style:normal; font-display:swap; }
-:root { --ink:#191f28; --muted:#4e5968; --subtle:#f2f4f6; --line:#dfe3e8; --accent:#245bb5; --title:60px; --body:28px; --small:22px; --caption:18px; --radius:24px; }
+:root { --canvas-bg:#fff; --chapter-bg:#f8fbff; --figure-bg:#f7f8fa; --summary-primary-bg:#245bb5; --summary-primary-ink:#fff; --summary-secondary-bg:#f2f4f6; --summary-secondary-ink:#191f28; --summary-tertiary-bg:#f2f4f6; --summary-tertiary-ink:#191f28; --summary-quaternary-bg:#f2f4f6; --summary-quaternary-ink:#191f28; --ink:#191f28; --muted:#4e5968; --subtle:#f2f4f6; --line:#dfe3e8; --accent:#245bb5; --title:60px; --body:28px; --small:22px; --caption:18px; --radius:24px; }
 * { box-sizing:border-box; }
 body { margin:0; background:#e8ebef; color:var(--ink); font-family:"Pretendard Kit",Pretendard,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif; font-size:var(--body); line-height:1.5; }
 .controls { padding:20px; text-align:center; font-size:16px; color:var(--muted); }
-.slide { container-type:size; width:1600px; height:900px; min-width:1600px; min-height:900px; margin:24px auto; padding:72px 96px 92px; background:#fff; position:relative; zoom:var(--scale,.7); }
+.slide { container-type:size; width:1600px; height:900px; min-width:1600px; min-height:900px; margin:24px auto; padding:72px 96px 92px; background:var(--canvas-bg); position:relative; zoom:var(--scale,.7); }
 .slide-content { height:736px; display:flex; flex-direction:column; gap:30px; }
 h1,h2,h3,p { margin:0; }
 h1 { font-size:72px; line-height:1.15; letter-spacing:-.035em; font-weight:700; }
@@ -28,7 +27,7 @@ p { font-size:var(--body); line-height:1.5; word-break:keep-all; overflow-wrap:a
 .three { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; flex:1; min-height:0; }
 .three .card { padding:36px; }
 .plain { padding:32px 0; display:flex; flex-direction:column; gap:22px; border-top:2px solid var(--line); }
-.figure { min-height:0; background:#f7f8fa; border:1px solid var(--line); border-radius:var(--radius); padding:36px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; text-align:center; }
+.figure { min-height:0; background:var(--figure-bg); border:1px solid var(--line); border-radius:var(--radius); padding:36px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; text-align:center; }
 .figure .placeholder { font-size:34px; line-height:1.35; color:var(--muted); font-weight:600; }
 .figure .caption { max-width:680px; }
 .cover .figure { height:530px; }
@@ -48,74 +47,114 @@ footer { position:absolute; bottom:30px; left:96px; right:96px; display:flex; ju
 footer a { color:inherit; }
 @page { size:16.666667in 9.375in; margin:0; }
 @media print { html,body,.deck { width:1600px; margin:0; padding:0; background:#fff; } .slide { margin:0; zoom:1; break-after:page; break-inside:avoid; } .slide:last-child { break-after:auto; } .controls { display:none; } * { print-color-adjust:exact; -webkit-print-color-adjust:exact; } }
-</style></head>
-<body><div class="controls">16:9 · 8페이지 편집 템플릿 · 실제 자료로 교체한 뒤 출력하세요</div>
-<main class="deck"><section class="slide"><div class="slide-content"><div class="cover">
-  <div class="cover-text">
-    <div><p class="role">[이름 · 희망 직무]</p><h1>직접 만든 것과<br>검증한 결과로 설명</h1></div>
-    <p>가장 관련 있는 프로젝트와<br>본인 기여를 한 문장으로 작성합니다.</p>
-    <p class="small">[소속 · 연락처 · 실제 근거 링크]</p>
-  </div>
-  <div class="figure"><p class="placeholder">대표 프로젝트의 실제 이미지</p><p class="caption">수행한 작업을 보여주는 화면·장비·결과를 배치합니다.<br>생성 이미지로 경험의 증거를 대신하지 않습니다.</p></div>
+
+.summary-grid { display:grid; grid-template-columns:1.1fr 1fr; grid-template-rows:1fr 1fr; gap:24px; flex:1; min-height:0; }
+.summary-grid .card { padding:30px; justify-content:space-between; }
+.summary-grid h3 { font-size:38px; }
+.summary-grid .primary-impact { background:var(--summary-primary-bg); color:var(--summary-primary-ink); }
+.summary-grid .card:nth-child(2) { background:var(--summary-secondary-bg); color:var(--summary-secondary-ink); }
+.summary-grid .card:nth-child(3) { background:var(--summary-tertiary-bg); color:var(--summary-tertiary-ink); }
+.summary-grid .card:nth-child(4) { background:var(--summary-quaternary-bg); color:var(--summary-quaternary-ink); }
+.summary-grid .small,.summary-grid .label { color:inherit; }
+
+.chapter { background:var(--chapter-bg); }
+.chapter .slide-content { gap:24px; }
+.chapter .role { margin:0; }
+.chapter-heading { max-width:1250px; font-size:72px; }
+.company-meta { display:flex; flex-wrap:wrap; gap:18px; font-size:22px; color:var(--muted); }
+.chapter-list { margin:18px 0 0; padding-left:32px; display:flex; flex-direction:column; gap:18px; font-size:28px; }
+.chapter-lead { max-width:1200px; font-size:30px; }
+.case-heading { display:flex; flex-direction:column; gap:16px; }
+.case-layout { display:grid; grid-template-columns:1.65fr 1fr; gap:28px; flex:1; min-height:0; }
+.case-copy { display:flex; flex-direction:column; gap:20px; }
+.case-copy p { font-size:26px; }
+.case-copy .small { font-size:22px; }
+.comparison { display:grid; grid-template-columns:1fr 1fr; gap:28px; flex:1; min-height:0; }
+.comparison .figure { align-items:flex-start; text-align:left; }
+.comparison .placeholder { align-self:center; text-align:center; }
+.decision-note { font-size:24px; }
+.result-rows { display:grid; grid-template-rows:repeat(3,minmax(0,1fr)); gap:16px; }
+.result-row { padding:20px 26px; border-radius:20px; background:var(--subtle); display:flex; flex-direction:column; gap:8px; }
+.result-row .result-value { font-size:38px; line-height:1.2; font-weight:600; }
+.award-figure { flex:1; display:flex; flex-direction:column; gap:18px; min-height:0; }
+.award-figure .figure { flex:1; }
+.capability { display:flex; flex-direction:column; gap:22px; }
+.capability h3 { font-size:32px; }
+
+.project-page .slide-content { gap:24px; }
+.project-header { display:flex; flex-direction:column; gap:12px; }
+.project-breadcrumb { font-size:22px; color:var(--accent); font-weight:600; line-height:1.45; }
+.project-header .company-meta { font-size:20px; }
+.project-layout { display:grid; grid-template-columns:1.65fr 1fr; gap:32px; flex:1; min-height:0; }
+.project-layout.right { grid-template-columns:1fr 1.65fr; }
+.project-copy { display:flex; flex-direction:column; gap:18px; }
+.project-copy .note { padding-top:16px; }
+.project-copy h3 { font-size:26px; }
+.project-copy p { font-size:24px; line-height:1.45; }
+.project-copy .small { font-size:20px; }
+.project-centered { display:flex; flex-direction:column; gap:20px; flex:1; min-height:0; }
+.project-centered .project-proof { flex:1; min-height:290px; }
+.project-centered .project-copy { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+</style></head><body>
+<div class="controls">16:9 · 18페이지 작성 예시 · 실제 경험에 맞춰 회사·프로젝트·성과·수상 항목을 삭제·조정하세요</div>
+<main class="deck"><section class="slide "><div class="slide-content"><div class="cover"><div class="cover-text">
+<div><p class="role">[이름 · 지원 직무]</p><h1>[핵심 역할]<br>커리어 포트폴리오</h1></div>
+<p>[문제 정의·실행·성과를 연결하는<br>근거 있는 포지셔닝 한 문장]</p>
+<p class="small">[연락처 · 실제 포트폴리오 링크]</p></div>
+<div class="figure"><p class="placeholder">대표 산출물 또는 간결한 표지</p><p class="caption">실제 자료·승인된 이미지가 있을 때만 사용합니다.<br>표지에 시각 자료가 필요 없으면 여백으로 구성합니다.</p></div></div></div>
+<footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>1 / 18</span></footer></section>
+<section class="slide "><div class="slide-content"><h2>Summary · 대표 성과</h2><p class="lead">JD와 연결되는 실제 성과를 선별하고 상세 챕터에서 입증합니다.</p>
+<div class="summary-grid">
+<div class="card primary-impact"><p class="label">대표 성과 1</p><h3>[가장 강한 성과·산출물]</h3><p>[개인 기여와 확인한 변화]</p><p class="small">[회사·프로젝트 | 당시 역할]</p></div>
+<div class="card"><p class="label">대표 성과 2</p><h3>[직무 관련 성과]</h3><p>[실제 결과와 근거]</p><p class="small">[회사·프로젝트 | 당시 역할]</p></div>
+<div class="card"><p class="label">대표 성과 3</p><h3>[차별화되는 수행 경험]</h3><p>[실제 결과와 근거]</p><p class="small">[회사·프로젝트 | 당시 역할]</p></div>
+<div class="card"><p class="label">대표 성과 4, 선택</p><h3>[추가로 입증할 역량]</h3><p>[근거가 없으면 카드 삭제]</p><p class="small">[회사·프로젝트 | 당시 역할]</p></div>
 </div></div>
-<footer><span>편집 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>1 / 8</span></footer></section>
-<section class="slide"><div class="slide-content"><h2>직무와 연결되는 대표 경험</h2>
-<p class="lead">전체 경험은 목록으로 연결하고, 여기서는 관련 사례를 선별합니다.</p>
-<div class="bento">
-  <div class="card primary"><p class="label">대표 사례</p><p class="statement">[프로젝트명]</p><p>[해결한 문제와<br>직접 맡은 기능]</p><p class="small">[기간 · 팀 규모 · 사용 환경]</p><p class="small">[확인한 결과 · 근거 링크]</p></div>
-  <div class="card"><p class="label">보조 사례</p><h3>[다른 경험과 본인 기여]</h3><p class="small">실제 사례가 있을 때만 사용합니다.</p></div>
-  <div class="card"><p class="label">지원 직무와의 연결</p><h3>[요구 역량과 근거]</h3><p class="small">JD 기준과 수행한 일을 연결합니다.</p></div>
-</div></div>
-<footer><span>편집 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>2 / 8</span></footer></section>
-<section class="slide"><div class="slide-content"><h2>무엇을 해결하려 했는가</h2>
-<p class="lead">대상·문제·성공 조건을 먼저 정리합니다.</p>
+<footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>2 / 18</span></footer></section>
+<section class="slide "><div class="slide-content"><h2>성과로 이어지는 일하는 방식</h2><p class="lead">실제 사례에서 반복된 방식만 요약합니다. 불필요하면 이 장을 삭제합니다.</p>
 <div class="three">
-  <div class="plain"><p class="label">환경</p><p class="statement">[누가, 어디에서]</p><p>[사용 환경과 입력·출력]</p><p class="small">장비·데이터·운영 조건 중 해석에 필요한 것만 남깁니다.</p></div>
-  <div class="plain"><p class="label">문제</p><p class="statement">[관찰한 현상]</p><p>[기존 방식의 한계]</p><p class="small">관측된 증상과 원인 가설을 구분합니다.</p></div>
-  <div class="plain"><p class="label">목표</p><p class="statement">[확인할 기준]</p><p>[이번에 해결할 범위]</p><p class="small">지표·조건·완료 기준을 명시하고 실측 결과와 구분합니다.</p></div>
+<div class="plain"><h3>문제 정의</h3><p>[사용자·고객·업무의 문제를 확인한 방법]</p><p class="small">[뒷받침하는 실제 사례]</p></div>
+<div class="plain"><h3>판단과 실행</h3><p>[직접 내린 판단과 구현·조율·운영 방식]</p><p class="small">[본인의 역할·책임 범위]</p></div>
+<div class="plain"><h3>검증과 확장</h3><p>[결과를 확인하고 다음 실행에 반영한 방법]</p><p class="small">[실측·운영 기록·확인된 산출물]</p></div>
 </div></div>
-<footer><span>편집 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>3 / 8</span></footer></section>
-<section class="slide"><div class="slide-content"><h2>전체 구조에서 맡은 부분</h2>
-<p class="lead">입력부터 출력까지 연결하고, 직접 수행한 범위를 표시합니다.</p>
-<div class="figure wide-figure"><p class="placeholder">실제 시스템 구조도</p><p class="caption">입력 → 처리 → 출력 / 모듈 간 연결 / 본인 구현 범위<br>원본 오픈소스·팀원 담당·직접 수정한 부분을 구분합니다.</p></div>
-<div class="ownership"><p><strong>직접 수행</strong> · [구현·분석·통합 범위]</p><p><strong>기존 기반</strong> · [라이브러리·팀 제공 모듈]</p></div></div>
-<footer><span>편집 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>4 / 8</span></footer></section>
-<section class="slide"><div class="slide-content"><h2>선택한 방법과 판단 근거</h2>
-<p class="lead">기술 이름보다 조건과 선택 이유를 설명합니다.</p>
-<div class="three">
-  <div class="card"><p class="label">제약</p><p class="statement">[반드시 지킬 조건]</p><p>[장비·시간·성능 제약]</p><p class="small">선택에 영향을 준 조건을 적습니다.</p></div>
-  <div class="card"><p class="label">대안</p><p class="statement">[비교한 방법]</p><p>[확인한 장단점]</p><p class="small">실제로 비교하거나 검토한 범위만 설명합니다.</p></div>
-  <div class="card"><p class="label">변경</p><p class="statement">[직접 바꾼 내용]</p><p>[구현 범위와 선택 이유]</p><p class="small">선택으로 남은 한계도 기록합니다.</p></div>
-</div></div>
-<footer><span>편집 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>5 / 8</span></footer></section>
-<section class="slide"><div class="slide-content"><h2>같은 조건에서 확인한 결과</h2>
-<p class="lead">비교 기준·환경·횟수를 함께 제시합니다.</p>
-<div class="evidence">
-  <div class="figure"><p class="placeholder">실제 결과 그래프·비교 화면</p><p class="caption">축·단위·비교 대상·실험 조건이 읽히게 배치합니다.<br>원자료와 재현 방법을 연결합니다.</p></div>
-  <div class="card"><p class="label">대표 결과</p><p class="metric">[결과]</p><p>[실제 수치와 단위<br>또는 확인한 산출물]</p><p class="small">[기준 방법 · 측정 환경 · 횟수]</p><p class="caption">미측정 결과는 개선 수치로 만들지 않습니다.</p></div>
-</div></div>
-<footer><span>편집 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>6 / 8</span></footer></section>
-<section class="slide"><div class="slide-content"><h2>실패 조건과 남은 한계</h2>
-<p class="lead">확인한 사실과 다음에 검증할 가설을 구분합니다.</p>
-<div class="limits">
-  <div class="figure"><p class="placeholder">실제 실패 장면·조건별 비교</p><p class="caption">시뮬레이션과 실기 결과를 구분하고<br>중요한 맥락을 잘라내지 않습니다.</p></div>
-  <div class="notes">
-    <div class="note"><h3>[발생 조건]</h3><p class="small">실패한 환경과 관찰 내용을 설명합니다.</p></div>
-    <div class="note"><h3>[원인 분석과 수정]</h3><p class="small">어떤 근거로 원인을 좁히고 무엇을 바꿨는지 적습니다.</p></div>
-    <div class="note"><h3>[다음 검증]</h3><p class="small">아직 확인하지 못한 조건과 완료 기준을 남깁니다.</p></div>
-  </div>
-</div></div>
-<footer><span>편집 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>7 / 8</span></footer></section>
-<section class="slide"><div class="slide-content"><h2>더 확인할 수 있는 근거</h2>
-<p class="lead">보조 경험과 재현 자료를 필요한 만큼 연결합니다.</p>
-<div class="closing">
-  <div class="notes"><div class="note"><h3>[보조 경험의 기여와 결과]</h3><p>자료가 있는 경우에만 추가합니다.<br>두 번째 사례를 만들어 채우지 않습니다.</p></div><div class="note"><h3>[다음에 확인할 과제]</h3><p class="small">실행할 실험과 판단 기준을 구체적으로 남깁니다.</p></div></div>
-  <div class="links"><h3>프로젝트 자료</h3><p>[실제 GitHub·README 링크]</p><p>[실제 데모·실험 기록 링크]</p><p class="small">지원자 자료는 공개 범위를 확인한 뒤 연결합니다.</p><p class="caption"><a href="https://github.com/Jskim9536/career-portfolio-kit">현재 템플릿 사용 안내</a></p></div>
-</div></div>
-<footer><span>편집 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>8 / 8</span></footer></section></main>
-<script>
+<footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>3 / 18</span></footer></section>
+<section class="slide chapter"><div class="slide-content"><p class="role">[회사·프로젝트 그룹 A]</p>
+<h2 class="chapter-heading">[제품·업무 영역과<br>이 경험에서 만든 변화]</h2><div class="company-meta"><strong>[회사·프로젝트 그룹 A]</strong><span>[실제 역할]</span><span>[기간]</span></div>
+<p class="chapter-lead">[외부인이 이해할 수 있는 고객·제품·업무 맥락 한 문장]</p>
+<ul class="chapter-list"><li>[핵심 성과 1]</li><li>[핵심 성과 2]</li><li>[핵심 성과 3, 실제 자료가 적으면 삭제]</li></ul>
+<p class="small">회사 경력이 없다면 프로젝트·연구·캡스톤 단위로 구성합니다.</p></div>
+<footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>4 / 18</span></footer></section>
+<section class="slide project-page" data-layout="left"><div class="slide-content"><div class="project-header"><p class="project-breadcrumb">[회사·경험 그룹 A] &gt; [프로젝트 1]</p><h2>[검증된 성과·변화의 명사형 제목]</h2><div class="company-meta"><span>[실제 역할]</span><span>[기간]</span></div></div><div class="project-layout"><div class="figure project-proof"><p class="placeholder">[프로젝트 1의 실제 근거 이미지]</p><p class="caption">[원본 비율·해상도·핵심 글자의 가독성을 확인한 화면·그래프·설계·Before/After]<br>예시 배치: 왼쪽 근거 · 실제 이미지에 맞게 변경</p></div><div class="project-copy"><div class="note"><h3>문제·내 역할</h3><p>[해결할 상황과 직접 책임진 범위]</p></div><div class="note"><h3>해결·판단</h3><p>[선택 이유와 실제 수행·변경 내용]</p></div><div class="note"><h3>성과·조건</h3><p>[확인한 변화·실측값 또는 실제 산출물]</p><p class="small">[기간·조건·출처·남은 한계]</p></div></div></div></div><footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>5 / 18</span></footer></section>
+<section class="slide project-page" data-layout="right"><div class="slide-content"><div class="project-header"><p class="project-breadcrumb">[회사·경험 그룹 A] &gt; [프로젝트 2]</p><h2>[검증된 성과·변화의 명사형 제목]</h2><div class="company-meta"><span>[실제 역할]</span><span>[기간]</span></div></div><div class="project-layout right"><div class="project-copy"><div class="note"><h3>문제·내 역할</h3><p>[해결할 상황과 직접 책임진 범위]</p></div><div class="note"><h3>해결·판단</h3><p>[선택 이유와 실제 수행·변경 내용]</p></div><div class="note"><h3>성과·조건</h3><p>[확인한 변화·실측값 또는 실제 산출물]</p><p class="small">[기간·조건·출처·남은 한계]</p></div></div><div class="figure project-proof"><p class="placeholder">[프로젝트 2의 실제 근거 이미지]</p><p class="caption">[원본 비율·해상도·핵심 글자의 가독성을 확인한 화면·그래프·설계·Before/After]<br>예시 배치: 오른쪽 근거 · 실제 이미지에 맞게 변경</p></div></div></div><footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>6 / 18</span></footer></section>
+<section class="slide project-page" data-layout="center"><div class="slide-content"><div class="project-header"><p class="project-breadcrumb">[회사·경험 그룹 A] &gt; [프로젝트 3]</p><h2>[검증된 성과·변화의 명사형 제목]</h2><div class="company-meta"><span>[실제 역할]</span><span>[기간]</span></div></div><div class="project-centered"><div class="figure project-proof"><p class="placeholder">[프로젝트 3의 실제 근거 이미지]</p><p class="caption">[원본 비율·해상도·핵심 글자의 가독성을 확인한 화면·그래프·설계·Before/After]<br>예시 배치: 가운데 전체 너비 근거 · 실제 이미지에 맞게 변경</p></div><div class="project-copy"><div class="note"><h3>문제·내 역할</h3><p>[해결할 상황과 직접 책임진 범위]</p></div><div class="note"><h3>해결·판단</h3><p>[선택 이유와 실제 수행·변경 내용]</p></div><div class="note"><h3>성과·조건</h3><p>[확인한 변화·실측값 또는 실제 산출물]</p><p class="small">[기간·조건·출처·남은 한계]</p></div></div></div></div><footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>7 / 18</span></footer></section>
+<section class="slide chapter"><div class="slide-content"><p class="role">[회사·프로젝트 그룹 B]</p>
+<h2 class="chapter-heading">[제품·업무 영역과<br>이 경험에서 만든 변화]</h2><div class="company-meta"><strong>[회사·프로젝트 그룹 B]</strong><span>[실제 역할]</span><span>[기간]</span></div>
+<p class="chapter-lead">[외부인이 이해할 수 있는 고객·제품·업무 맥락 한 문장]</p>
+<ul class="chapter-list"><li>[핵심 성과 1]</li><li>[핵심 성과 2]</li><li>[핵심 성과 3, 실제 자료가 적으면 삭제]</li></ul>
+<p class="small">회사 경력이 없다면 프로젝트·연구·캡스톤 단위로 구성합니다.</p></div>
+<footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>8 / 18</span></footer></section>
+<section class="slide project-page" data-layout="left"><div class="slide-content"><div class="project-header"><p class="project-breadcrumb">[회사·경험 그룹 B] &gt; [프로젝트 1]</p><h2>[검증된 성과·변화의 명사형 제목]</h2><div class="company-meta"><span>[실제 역할]</span><span>[기간]</span></div></div><div class="project-layout"><div class="figure project-proof"><p class="placeholder">[프로젝트 1의 실제 근거 이미지]</p><p class="caption">[원본 비율·해상도·핵심 글자의 가독성을 확인한 화면·그래프·설계·Before/After]<br>예시 배치: 왼쪽 근거 · 실제 이미지에 맞게 변경</p></div><div class="project-copy"><div class="note"><h3>문제·내 역할</h3><p>[해결할 상황과 직접 책임진 범위]</p></div><div class="note"><h3>해결·판단</h3><p>[선택 이유와 실제 수행·변경 내용]</p></div><div class="note"><h3>성과·조건</h3><p>[확인한 변화·실측값 또는 실제 산출물]</p><p class="small">[기간·조건·출처·남은 한계]</p></div></div></div></div><footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>9 / 18</span></footer></section>
+<section class="slide project-page" data-layout="right"><div class="slide-content"><div class="project-header"><p class="project-breadcrumb">[회사·경험 그룹 B] &gt; [프로젝트 2]</p><h2>[검증된 성과·변화의 명사형 제목]</h2><div class="company-meta"><span>[실제 역할]</span><span>[기간]</span></div></div><div class="project-layout right"><div class="project-copy"><div class="note"><h3>문제·내 역할</h3><p>[해결할 상황과 직접 책임진 범위]</p></div><div class="note"><h3>해결·판단</h3><p>[선택 이유와 실제 수행·변경 내용]</p></div><div class="note"><h3>성과·조건</h3><p>[확인한 변화·실측값 또는 실제 산출물]</p><p class="small">[기간·조건·출처·남은 한계]</p></div></div><div class="figure project-proof"><p class="placeholder">[프로젝트 2의 실제 근거 이미지]</p><p class="caption">[원본 비율·해상도·핵심 글자의 가독성을 확인한 화면·그래프·설계·Before/After]<br>예시 배치: 오른쪽 근거 · 실제 이미지에 맞게 변경</p></div></div></div><footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>10 / 18</span></footer></section>
+<section class="slide project-page" data-layout="center"><div class="slide-content"><div class="project-header"><p class="project-breadcrumb">[회사·경험 그룹 B] &gt; [프로젝트 3]</p><h2>[검증된 성과·변화의 명사형 제목]</h2><div class="company-meta"><span>[실제 역할]</span><span>[기간]</span></div></div><div class="project-centered"><div class="figure project-proof"><p class="placeholder">[프로젝트 3의 실제 근거 이미지]</p><p class="caption">[원본 비율·해상도·핵심 글자의 가독성을 확인한 화면·그래프·설계·Before/After]<br>예시 배치: 가운데 전체 너비 근거 · 실제 이미지에 맞게 변경</p></div><div class="project-copy"><div class="note"><h3>문제·내 역할</h3><p>[해결할 상황과 직접 책임진 범위]</p></div><div class="note"><h3>해결·판단</h3><p>[선택 이유와 실제 수행·변경 내용]</p></div><div class="note"><h3>성과·조건</h3><p>[확인한 변화·실측값 또는 실제 산출물]</p><p class="small">[기간·조건·출처·남은 한계]</p></div></div></div></div><footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>11 / 18</span></footer></section>
+<section class="slide chapter"><div class="slide-content"><p class="role">[회사·프로젝트 그룹 C]</p>
+<h2 class="chapter-heading">[제품·업무 영역과<br>이 경험에서 만든 변화]</h2><div class="company-meta"><strong>[회사·프로젝트 그룹 C]</strong><span>[실제 역할]</span><span>[기간]</span></div>
+<p class="chapter-lead">[외부인이 이해할 수 있는 고객·제품·업무 맥락 한 문장]</p>
+<ul class="chapter-list"><li>[핵심 성과 1]</li><li>[핵심 성과 2]</li><li>[핵심 성과 3, 실제 자료가 적으면 삭제]</li></ul>
+<p class="small">회사 경력이 없다면 프로젝트·연구·캡스톤 단위로 구성합니다.</p></div>
+<footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>12 / 18</span></footer></section>
+<section class="slide project-page" data-layout="left"><div class="slide-content"><div class="project-header"><p class="project-breadcrumb">[회사·경험 그룹 C] &gt; [프로젝트 1]</p><h2>[검증된 성과·변화의 명사형 제목]</h2><div class="company-meta"><span>[실제 역할]</span><span>[기간]</span></div></div><div class="project-layout"><div class="figure project-proof"><p class="placeholder">[프로젝트 1의 실제 근거 이미지]</p><p class="caption">[원본 비율·해상도·핵심 글자의 가독성을 확인한 화면·그래프·설계·Before/After]<br>예시 배치: 왼쪽 근거 · 실제 이미지에 맞게 변경</p></div><div class="project-copy"><div class="note"><h3>문제·내 역할</h3><p>[해결할 상황과 직접 책임진 범위]</p></div><div class="note"><h3>해결·판단</h3><p>[선택 이유와 실제 수행·변경 내용]</p></div><div class="note"><h3>성과·조건</h3><p>[확인한 변화·실측값 또는 실제 산출물]</p><p class="small">[기간·조건·출처·남은 한계]</p></div></div></div></div><footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>13 / 18</span></footer></section>
+<section class="slide project-page" data-layout="right"><div class="slide-content"><div class="project-header"><p class="project-breadcrumb">[회사·경험 그룹 C] &gt; [프로젝트 2]</p><h2>[검증된 성과·변화의 명사형 제목]</h2><div class="company-meta"><span>[실제 역할]</span><span>[기간]</span></div></div><div class="project-layout right"><div class="project-copy"><div class="note"><h3>문제·내 역할</h3><p>[해결할 상황과 직접 책임진 범위]</p></div><div class="note"><h3>해결·판단</h3><p>[선택 이유와 실제 수행·변경 내용]</p></div><div class="note"><h3>성과·조건</h3><p>[확인한 변화·실측값 또는 실제 산출물]</p><p class="small">[기간·조건·출처·남은 한계]</p></div></div><div class="figure project-proof"><p class="placeholder">[프로젝트 2의 실제 근거 이미지]</p><p class="caption">[원본 비율·해상도·핵심 글자의 가독성을 확인한 화면·그래프·설계·Before/After]<br>예시 배치: 오른쪽 근거 · 실제 이미지에 맞게 변경</p></div></div></div><footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>14 / 18</span></footer></section>
+<section class="slide project-page" data-layout="center"><div class="slide-content"><div class="project-header"><p class="project-breadcrumb">[회사·경험 그룹 C] &gt; [프로젝트 3]</p><h2>[검증된 성과·변화의 명사형 제목]</h2><div class="company-meta"><span>[실제 역할]</span><span>[기간]</span></div></div><div class="project-centered"><div class="figure project-proof"><p class="placeholder">[프로젝트 3의 실제 근거 이미지]</p><p class="caption">[원본 비율·해상도·핵심 글자의 가독성을 확인한 화면·그래프·설계·Before/After]<br>예시 배치: 가운데 전체 너비 근거 · 실제 이미지에 맞게 변경</p></div><div class="project-copy"><div class="note"><h3>문제·내 역할</h3><p>[해결할 상황과 직접 책임진 범위]</p></div><div class="note"><h3>해결·판단</h3><p>[선택 이유와 실제 수행·변경 내용]</p></div><div class="note"><h3>성과·조건</h3><p>[확인한 변화·실측값 또는 실제 산출물]</p><p class="small">[기간·조건·출처·남은 한계]</p></div></div></div></div><footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>15 / 18</span></footer></section>
+<section class="slide "><div class="slide-content"><h2>수상·외부 인정</h2><p class="lead">공식 명칭과 실제 근거를 사용합니다. 해당 경험이 없으면 이 장을 삭제합니다.</p>
+<div class="comparison"><div class="award-figure"><div class="figure"><p class="placeholder">실제 수상 사진·공식 근거</p></div><h3>[수상명·연도·주최 기관]</h3><p class="small">[관련 작업과 본인 기여·공개 출처]</p></div><div class="award-figure"><div class="figure"><p class="placeholder">추가 인정·발표·공개 결과</p></div><h3>[명칭·날짜·기관]</h3><p class="small">[근거가 없으면 해당 영역 삭제]</p></div></div></div>
+<footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>16 / 18</span></footer></section>
+<section class="slide "><div class="slide-content"><h2>직무 수행을 뒷받침하는 기반</h2><p class="lead">실제 학력·자격·연구·도구 활용 중 목표 직무와 관련된 것을 선별합니다.</p>
+<div class="three"><div class="card"><h3>학력·연구</h3><p>[학교·전공·학위·기간]</p><p>[관련 연구와 본인 수행 범위]</p><p class="small">공식 표기와 상태를 확인합니다.</p></div><div class="card"><h3>자격·외부 활동</h3><p>[자격명·기관·취득일]</p><p>[발표·활동과 확인된 기여]</p><p class="small">없는 항목은 만들지 않습니다.</p></div><div class="card"><h3>실무 역량</h3><p>[실제로 활용한 도구·업무 방식]</p><p>[활용 범위와 관련 사례]</p><p class="small">로고·숙련도 막대로 역량을 대신하지 않습니다.</p></div></div></div>
+<footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>17 / 18</span></footer></section>
+<section class="slide "><div class="slide-content"><h2>이 경험으로 만들 수 있는 변화</h2><p class="lead">앞선 근거를 세 가지 채용 가치로 묶어 마무리합니다.</p>
+<div class="three"><div class="capability plain"><h3>[핵심 역량 1]</h3><p>[입증한 경험을 바탕으로 기여할 수 있는 범위]</p></div><div class="capability plain"><h3>[핵심 역량 2]</h3><p>[입증한 경험을 바탕으로 기여할 수 있는 범위]</p></div><div class="capability plain"><h3>[핵심 역량 3]</h3><p>[입증한 경험을 바탕으로 기여할 수 있는 범위]</p></div></div>
+<p class="small">[이름 · 지원 직무] · [실제 연락처·포트폴리오·근거 링크]</p></div>
+<footer><span>작성 템플릿 · 실제 지원자 실적 아님 · <a href="https://github.com/Jskim9536/career-portfolio-kit">안내</a></span><span>18 / 18</span></footer></section></main><script>
 function fit(){document.documentElement.style.setProperty("--scale",String(Math.max(.1,Math.min(1,(innerWidth-32)/1600))))}
-fit(); addEventListener("resize",fit);
-addEventListener("beforeprint",()=>document.documentElement.style.setProperty("--scale","1"));
-addEventListener("afterprint",fit);
+fit();addEventListener("resize",fit);addEventListener("beforeprint",()=>document.documentElement.style.setProperty("--scale","1"));addEventListener("afterprint",fit);
 </script></body></html>

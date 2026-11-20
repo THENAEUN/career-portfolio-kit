@@ -11,7 +11,7 @@
 | JD 기준을 세우고 작성물을 채점·검수한 뒤 2차 수정하기 | [jd-application-review](skills/jd-application-review/SKILL.md) | 고정 평가표·문서별 점수·인수조건·수정 전후 리뷰 + 갱신 HTML·PDF |
 | 한·영 텍스트 중심 이력서를 만들고 PDF로 출력하기 | [html-a4-resume](skills/html-a4-resume/SKILL.md) | 한국어 HTML·PDF + 영어 HTML·PDF, 기본 4개 파일 |
 | 업무·프로젝트와 본인 기여를 정리하고 첨삭받기 | [student-project-portfolio](skills/student-project-portfolio/SKILL.md) | 경험 설명·필요 시 README·보완 과제 |
-| HTML로 포트폴리오를 만들고 PDF로 출력하기 | [html-pdf-portfolio](skills/html-pdf-portfolio/SKILL.md) | 편집 HTML + PDF, 기본 8페이지·제출 조건 우선 |
+| HTML로 포트폴리오를 만들고 PDF로 출력하기 | [html-pdf-portfolio](skills/html-pdf-portfolio/SKILL.md) | 회사·프로젝트별 성과 챕터의 편집 HTML + PDF, 제출 조건 우선 |
 | 학회 발표 형태의 A4 포스터 만들기 | [academic-a4-poster](skills/academic-a4-poster/SKILL.md) | 편집 HTML + A4 1페이지 PDF 초안 |
 
 포스터 스킬은 Behance의 학술 포스터·타이포그래피 사례와 대학 도서관의 디자인 가이드를 참고했습니다. [레퍼런스와 확인 범위](skills/academic-a4-poster/references/design-and-references.md)를 기록했으며, 타인의 원본 이미지나 유료 템플릿은 포함하지 않습니다.
@@ -48,13 +48,16 @@ JD가 있으면 이력서·포트폴리오 제작 전에 **필수요건·주요�
 - [한국어 이력서 HTML](skills/html-a4-resume/assets/resume-ko.html), [영어 이력서 HTML](skills/html-a4-resume/assets/resume-en.html): A4 세로 1페이지 시작 템플릿. 학생·신입은 1페이지, 경력자는 기본 1~2페이지로 조정합니다. 한국어는 명사형, 영어는 동사 중심 불릿으로 작성하며 두 언어의 사실을 대조합니다.
 - [프로젝트 전체 목록](templates/PROJECT-INVENTORY.md): 모든 경험을 빠짐없이 연결합니다.
 - [지원자 사전 질문지](templates/CANDIDATE-INTAKE.md): 경력·직무와 관계없이 사용하는 기본 입력. [학생용 보조 질문지](templates/STUDENT-INTAKE.md), [프로젝트 README](templates/PROJECT-README.md)는 해당할 때 사용합니다.
-- [포트폴리오 HTML](skills/html-pdf-portfolio/assets/portfolio.html): 8페이지 시작 템플릿. 내용에 따라 최대 10페이지로 조정합니다.
+- [포트폴리오 HTML](skills/html-pdf-portfolio/assets/portfolio.html): 표지·Summary·회사/프로젝트 간지·핵심 성과·수상·학력/역량·채용 가치 마무리의 18페이지 작성 예시. [챕터 구성 지침](skills/html-pdf-portfolio/references/chapter-structure.md)에 따라 없는 항목은 삭제하고 실제 사례량에 맞춥니다.
 - [포트폴리오 디자인 첨삭 기준](skills/html-pdf-portfolio/references/design-review.md): 밝은 배경·큰 결론·실제 근거·선택적 벤토 구성. `design-taste-frontend`의 문서에 맞는 원칙을 적용하며 해당 스킬이 없어도 사용할 수 있습니다.
+- [프로젝트 한 페이지 기준](skills/html-pdf-portfolio/references/project-onepager.md): **검증된 성과를 먼저 보여주는 명사형 제목**, 회사→프로젝트 계층, 문제·내 역할 / 해결·판단 / 성과·조건을 정리합니다. 실제 이미지 비율·가독성에 맞춰 왼쪽·오른쪽·가운데 전체 너비 배치를 선택합니다.
 - [A4 포스터 HTML](skills/academic-a4-poster/assets/poster.html): 2열 구조의 학술형 초안.
 - [템플릿 PDF 예시](examples/): 실제 지원자 실적이 아닌 구조·출력 확인용입니다.
 - [미니 실험 가이드](MINI-PROJECTS.md): 로봇·자율주행 학습자에게 맞는 선택형 보완 과제입니다. 모든 직무·경력자가 수행할 필수 단계가 아닙니다.
 
 전체 경험은 개인 목록에 정리하고 PDF에는 대표 사례를 선별합니다. 공개 가능한 기술 프로젝트는 필요하면 GitHub에 연결합니다. A4 포스터는 초안 규격이며 대형 출력은 행사 규격에 맞춰 별도로 조판합니다.
+
+포트폴리오 디자인 전에는 **원하는 테마색과 Summary 벤토 팔레트**를 확인합니다. 색상 코드·참고 이미지·스타일 가이드를 주면 맞춰 적용하고, 기존 자료에 선호가 있으면 다시 묻지 않습니다. 별도 선호가 없으면 기본 팔레트를 선택할 수 있습니다. 템플릿의 파란색은 예시이며 모든 지원자에게 고정된 색상이 아닙니다.
 
 ## 글꼴·글자 크기와 바로 쓸 수 있는 HTML
 
@@ -113,6 +116,8 @@ python3 tools/check_pdf.py output/application/v1/portfolio.pdf --kind portfolio
 ```
 
 이력서 스킬은 위 템플릿을 복사해 실제 자료로 편집한 **한국어 HTML·PDF와 영어 HTML·PDF를 함께 전달**합니다. 위 명령은 템플릿 출력 확인용이며 개인 이력서 작성 자체를 대신하지 않습니다. `--kind resume`는 기본 1~2페이지의 A4 세로 문서를 확인합니다. 제출 조건상 더 긴 이력서는 `--max-pages`로 한도를 지정하고, 이름 등 추출 확인은 `--require-text`, 링크 주석 확인은 `--require-uri`로 지정합니다.
+
+포트폴리오 검사는 기본 최대 30페이지이며 제출 조건에 맞게 `--kind portfolio --max-pages N`을 지정할 수 있습니다. 분량을 채우기 위해 없는 회사·프로젝트·성과·수상을 만들지 않습니다.
 
 ## 공개 자료의 범위
 

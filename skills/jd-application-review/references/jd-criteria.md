@@ -25,7 +25,9 @@ JD가 없으면 목표 직무 기반 **임시 구성 계획**만 만든다. JD�
 
 명시된 **지원 필수 자격**은 `critical: true`로 표시하며 `category: must_have`, `source_type: explicit`이어야 한다. 학위·경력 연수·필수 자격증·근무 자격 등의 충족 여부는 근거표에서 따로 `pass / fail / unknown`으로 판정한다. 단지 경험이 더 풍부하면 좋은 우대사항을 critical로 지정하지 않는다.
 
-포트폴리오의 communication 항목에는 [디자인 인수조건](../../html-pdf-portfolio/references/design-review.md)을 반영해 핵심 결론·근거 가독성·정보량·일관성을 평가한다. 이력서는 A4 본문 위계와 스캔 가능성을 평가한다. 별도 취향 점수를 추가해 합계 100을 넘기거나, 리뷰 후 배점을 바꾸지 않는다.
+포트폴리오의 communication 항목에는 [디자인 인수조건](../../html-pdf-portfolio/references/design-review.md)과 [회사·프로젝트 챕터 구성](../../html-pdf-portfolio/references/chapter-structure.md)을 반영해 Summary와 상세 성과의 연결, 회사·역할·기간 경계, 핵심 결론·근거 가독성·정보량·일관성·사용자 팔레트 반영을 평가한다. 이력서는 A4 본문 위계와 스캔 가능성을 평가한다. 별도 취향 점수를 추가해 합계 100을 넘기거나, 리뷰 후 배점을 바꾸지 않는다.
+
+프로젝트별 대표 한 페이지에는 [성과 중심 명사형 제목·문제/해결/성과·가변 이미지 배치 기준](../../html-pdf-portfolio/references/project-onepager.md)을 적용한다. 제목·Summary에서 검증된 성과와 개인 기여가 먼저 보이는지, 회사→프로젝트 계층·결과 조건·원본 이미지 비율과 실제 PDF 가독성을 확인한다. 미측정 작업에 숫자 성과를 강요하거나 좌측 배치만 통과시키거나 장식적 레이아웃 변화 자체를 가점하지 않는다.
 
 ## 기준 JSON 계약
 

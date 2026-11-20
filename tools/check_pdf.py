@@ -11,10 +11,10 @@ def main():
     parser.add_argument('--kind', choices=['poster', 'portfolio', 'resume'], required=True)
     parser.add_argument('--require-uri', action='append', default=[])
     parser.add_argument('--require-text', action='append', default=[], help='Required extractable text; repeat as needed')
-    parser.add_argument('--max-pages', type=int, help='Resume page limit (default: 2)')
+    parser.add_argument('--max-pages', type=int, help='Page limit for resume (default: 2) or portfolio (default: 30)')
     args = parser.parse_args()
-    if args.max_pages is not None and (args.kind != 'resume' or args.max_pages < 1):
-        parser.error('--max-pages requires --kind resume and a positive integer')
+    if args.max_pages is not None and (args.kind not in {'resume', 'portfolio'} or args.max_pages < 1):
+        parser.error('--max-pages requires --kind resume or portfolio and a positive integer')
     try:
         from pypdf import PdfReader
     except ImportError:
@@ -24,8 +24,8 @@ def main():
     count = len(reader.pages)
     if args.kind == 'poster' and count != 1:
         errors.append('Poster must contain one page')
-    if args.kind == 'portfolio' and not 1 <= count <= 10:
-        errors.append('Portfolio must contain 1 to 10 pages')
+    if args.kind == 'portfolio' and not 1 <= count <= (args.max_pages or 30):
+        errors.append(f'Portfolio must contain 1 to {args.max_pages or 30} pages')
     if args.kind == 'resume' and not 1 <= count <= (args.max_pages or 2):
         errors.append(f'Resume must contain 1 to {args.max_pages or 2} pages')
     for i, page in enumerate(reader.pages, 1):
